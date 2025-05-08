@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    pointer-events: auto !important;
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #18181b;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #18181b;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3f3f46;
+  border-radius: 4px;
+  border: 2px solid #18181b;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b;
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 #18181b;
+}
+
+/* Hide Scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Message Area Scrollbar */
+.message-scrollbar::-webkit-scrollbar {
+  width: 200px;
+  height: 100px;
+}
+
+.message-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.message-scrollbar::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 100vh;
+}
+
+.message-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Firefox */
+.message-scrollbar {
+  /* scrollbar-width: thin; */
+  scrollbar-color: #3f3f46 transparent;
+}
+
+/* Workspace Table Scrollbar */
+.workspace-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.workspace-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.workspace-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 100vh;
+  border: 2px solid transparent;
+}
+
+.workspace-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Firefox */
+.workspace-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent;
+  }
+}
+
+@keyframes dialogSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Scrollbar Styles */
+.scrollbar-visible::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scrollbar-visible::-webkit-scrollbar-track {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Firefox */
+.scrollbar-visible {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 #27272a;
+}
